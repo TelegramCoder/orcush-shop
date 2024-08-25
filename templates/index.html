@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Orcush Store</title>
+</head>
+<body>
+    <h1>Orcush Store</h1>
+    <ul>
+    {% for product in products %}
+        <li>
+            {{ product.name }} - {{ product.price }}€
+            <a href="{{ url_for('product_detail', product_id=product.id) }}">Details</a>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_product') }}">Add Product</a>
+</body>
+</html>
